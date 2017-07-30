@@ -1,1 +1,71 @@
+.nav__container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	height: $navHeight;
+	padding: 0 60px;
+	background-color: $color4;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	user-select: none;
+}
 
+.nav__logo {
+	height: 80px;
+}
+
+.nav__menu {
+	margin-left: auto;
+}
+
+.nav__list {
+	display: flex;
+}
+
+.nav__list-element {
+	margin-top: 8px;
+	margin-right: 60px;
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: $medium;
+	list-style: none;
+	transition: all .3s;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:hover:not(.active) {
+		color: $color5;
+	}
+
+	&.active {
+		color: $color2;
+	}
+}
+
+.nav__underline-container {
+	margin-top: 8px;
+	height: 4px;
+}
+
+.nav__underline {
+	position: relative;
+	height: 4px;
+	border-radius: 2px;
+	background-color: $color2;
+}
+
+.nav__filler {
+	width: 100vw;
+	height: $navHeight;
+}
