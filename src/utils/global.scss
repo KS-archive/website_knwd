@@ -9,10 +9,36 @@ body {
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
 	padding: 0;
-	line-height: 0;
+	line-height: 1;
+	color: #333;
 }
 
 ul {
    margin: 0;
    padding: 0;
+}
+
+section.container {
+   width: 1140px;
+   margin: 150px auto 0;
+
+   @media (max-width: 1200px) {
+      width: 900px;
+   }
+
+   @media (max-width: 960px) {
+      width: 680px;
+   }
+
+   @media (max-width: 700px) {
+      width: 90%;
+   }
+}
+
+.section__header {
+   margin-bottom: 60px;
+   font-size: 36px;
+	text-align: center;
+   font-weight: $black;
+   color: #333;
 }
