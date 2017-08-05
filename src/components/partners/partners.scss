@@ -1,5 +1,4 @@
-%border-bottom { border-bottom: 1px solid #ddd; }
-%border-right { border-right: 1px solid #ddd; }
+$partnersBorder: 1px solid #ddd;
 
 .partners__container {
 	display: flex;
@@ -25,22 +24,22 @@
 	}
 
 	@media (min-width: 1201px) {
-		&:nth-child(-n+4) { @extend %border-bottom }
-		&:not(:nth-child(4n)){ @extend %border-right }
+		&:nth-child(-n+4) { border-bottom: $partnersBorder; }
+		&:not(:nth-child(4n)){ border-right: $partnersBorder; }
 	}
 
 	@media (max-width: 1200px) and (min-width: 961px) {
-		&:not(&:nth-last-child(-n+2))) { @extend %border-bottom }
-		&:not(:nth-child(3n)):not(:last-child) { @extend %border-right }
+		&:not(:nth-last-child(-n+2)) { border-bottom: $partnersBorder; }
+		&:not(:nth-child(3n)):not(:last-child) { border-right: $partnersBorder; }
 	}
 
 	@media (max-width: 960px) and (min-width: 701px) {
-		&:not(&:nth-last-child(-n+2))) { @extend %border-bottom }
-		&:nth-child(2n-1) { @extend %border-right }
+		&:not(:nth-last-child(-n+2)) { border-bottom: $partnersBorder; }
+		&:nth-child(2n-1) { border-right: $partnersBorder; }
 	}
 
 	@media (max-width: 700px) {
-		&:not(:last-child) { @extend %border-bottom }
+		&:not(:last-child) { border-bottom: $partnersBorder; }
 	}
 }
 
@@ -48,5 +47,9 @@
 	max-width: 160px;
 	max-height: 100px;
 	filter: grayscale(1) saturate(0%);
-	transition: all .6s;
+	transition: all .3s;
+
+   @media (max-width: 768px) {
+		filter: grayscale(0) saturate(100%);
+	}
 }
