@@ -14,7 +14,6 @@ const gulp = require('gulp'),
 		stripCssComments = require('gulp-strip-css-comments'), // Usunięcie komentarzy z css.
 		htmlmin = require('gulp-htmlmin'), // Minifikacja html.
 		fileinclude = require('gulp-file-include'), // Importowanie html.
-		injectSvg = require('gulp-inject-svg'), // Importowanie svg.
 		rename = require("gulp-rename"), // Zmiana nazwy pliku wyjściowego.
 		plumber = require('gulp-plumber'),
 		reload = function(){setTimeout(browserSync.reload, 1000)};
@@ -117,7 +116,6 @@ gulp.task('concatenate-html', function() {
       	prefix: '@@',
       	basepath: '@file'
     	}))
-		.pipe(injectSvg())
 		.pipe(htmlmin({
 			collapseWhitespace: true,
 			removeComments: true
