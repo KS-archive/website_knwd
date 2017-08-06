@@ -33,12 +33,12 @@ $partnersBorder: 1px solid #ddd;
 		&:not(:nth-child(3n)):not(:last-child) { border-right: $partnersBorder; }
 	}
 
-	@media (max-width: 960px) and (min-width: 701px) {
+	@media (max-width: 960px) and (min-width: 651px) {
 		&:not(:nth-last-child(-n+2)) { border-bottom: $partnersBorder; }
 		&:nth-child(2n-1) { border-right: $partnersBorder; }
 	}
 
-	@media (max-width: 700px) {
+	@media (max-width: 650px) {
 		&:not(:last-child) { border-bottom: $partnersBorder; }
 	}
 }
