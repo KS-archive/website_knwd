@@ -8,28 +8,28 @@ const checkActive = (nav) => {
    });
 
    cur = cur[cur.length-1];
-   let navClass = '.A_' + cur.attr('id');
+   let navClass = '.A_' + cur.getAttribute('id');
    let index = nav.$navAnchors.index(cur);
 
    if (nav.lastActive !== navClass) {
       nav.lastActive = navClass;
-      changeActive(nav, index);
+      if (!nav.dontChangeActive) {
+         changeActive(nav, index);
+      }
    }
 }
 
 // Płynne przewijanie strony.
 const smoothScroll = (e, id) => {
 
-
    nav.dontChangeActive = true;
    window.setTimeout(() => { nav.dontChangeActive = false; }, 1000);
-
-   let target = $(`#${id.split(' ')[0]}`);
-   nav.$forMobileToggle.removeClass('mobile');
-   nav.$burger.removeClass('open');
-   $('html, body').animate({
-      scrollTop: (target.offset().top - nav.$navContainer.height() - 60)
-   }, 1000);
+   if (typeof id === 'string') {
+      let target = $(`#${id.split(' ')[0]}`);
+      nav.$forMobileToggle.removeClass('mobile');
+      nav.$burger.removeClass('open');
+      nav.smoothScrollObj.animateScroll( (target.offset().top - nav.$navContainer.height() - 60) );
+   }
 };
 
 // Inicjalizuje mechanikę nawigacji.
@@ -60,16 +60,13 @@ const initialize = (nav) => {
 
 // Zmienia aktywny element menu na podstawie przekazanego indesku.
 const changeActive = (nav, index) => {
-   if (!nav.dontChangeActive) {
-      nav.activeIndex = index;
-      let activeElement = $(nav.$elements[index]);
-      $('.nav__list-element.active').removeClass('active');
-      activeElement.addClass('active');
-      nav.$underline.animate({
-         width: (activeElement.width()/1.618),
-         left: (activeElement.offset().left - nav.$underlineContainer.offset().left + (activeElement.width() - activeElement.width()/1.618)/2),
-      });
-   }
+   nav.activeIndex = index;
+   const activeElement = $(nav.$elements[index]);
+   $('.nav__list-element.active').removeClass('active');
+   activeElement.addClass('active');
+   const width = activeElement.width()/1.618;
+   const left = activeElement.offset().left - nav.$underlineContainer.offset().left + (activeElement.width() - activeElement.width()/1.618)/2;
+   nav.$underline.css({ width, left });
 }
 
 const nav = {
@@ -84,6 +81,7 @@ const nav = {
    underlineContainerWidth: $('.nav__list').width(),
    lastActive: '',
    dontChangeActive: false,
+   smoothScrollObj: new SmoothScroll(),
 }
 
 initialize(nav);
