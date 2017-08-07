@@ -75,7 +75,7 @@ const nav = {
    $underlineContainer: $('.nav__underline-container'),
    $underline: $('.nav__underline'),
    $burger: $('.nav__burger'),
-   $forMobileToggle: $('nav, .nav__container, .nav__logo, .nav__menu, .nav__list, .nav__list-element'),
+   $forMobileToggle: $('.nav__container, .nav__logo, .nav__menu, .nav__list, .nav__list-element'),
    $navAnchors: $('#home, #kim_jesteśmy, #projekty, #partnerzy, #członkowie, #kontakt'),
    activeIndex: 0,
    underlineContainerWidth: $('.nav__list').width(),
