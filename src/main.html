@@ -4,8 +4,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="description" content="Łączymy pasje i umiejętności studentów związane z tworzeniem stron i aplikacji internetowych, a następnie wykorzysujemy je do realizacji wartościowych idei">
    <title>Koło Naukowe Web Designu</title>
-   <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,900&amp;subset=latin-ext" rel="stylesheet">
+   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+   <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
    <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -18,5 +20,12 @@
    @@include('./components/members/members.html')
    @@include('./components/contact/contact.html')
    <script src="main.js"></script>
+   <script>
+   WebFont.load({
+      google: {
+         families: ['Roboto:300,500,900:latin,latin-ext']
+      }
+   });
+   </script>
 </body>
 </html>

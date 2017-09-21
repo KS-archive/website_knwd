@@ -24,13 +24,13 @@ $partnersBorder: 1px solid #ddd;
 	}
 
 	@media (min-width: 1201px) {
-		&:nth-child(-n+4) { border-bottom: $partnersBorder; }
+		// &:nth-child(-n+4) { border-bottom: $partnersBorder; }
 		&:not(:nth-child(4n)){ border-right: $partnersBorder; }
 	}
 
 	@media (max-width: 1200px) and (min-width: 961px) {
-		&:not(:nth-last-child(-n+2)) { border-bottom: $partnersBorder; }
-		&:not(:nth-child(3n)):not(:last-child) { border-right: $partnersBorder; }
+		// &:not(:nth-last-child(-n+1)) { border-bottom: $partnersBorder; }
+		// &:not(:nth-child(3n)):not(:last-child) { border-right: $partnersBorder; }
 	}
 
 	@media (max-width: 960px) and (min-width: 651px) {

@@ -18,7 +18,7 @@ const gulp = require('gulp'),
 		plumber = require('gulp-plumber'),
 		reload = function(){setTimeout(browserSync.reload, 1000)};
 
-let production = false;
+let production = true;
 
 // Tworzy wersję deweloperską.
 gulp.task('default', function(callback) {
@@ -69,7 +69,7 @@ gulp.task('concatenate', ['concatenate-scripts', 'concatenate-styles', 'concaten
 
 // Konkatenacja i minifikacja skryptów - development.
 gulp.task('concatenate-scripts', function() {
-	return gulp.src(['./src/main.js', './src/utils/smoothscroll.js', './src/utils/zepto.js', './src/components/**/*.js'])
+	return gulp.src(['./src/main.js', './src/utils/webfont.js', './src/utils/smoothscroll.js', './src/utils/zepto.js', './src/components/**/*.js'])
 		.pipe(gulpif(!production, sourcemaps.init()))
 		.pipe(babel({
 			presets: ['env'],
