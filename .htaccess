@@ -64,6 +64,9 @@
 # END Expire headers
 # BEGIN Cache-Control Headers
 <ifModule mod_headers.c>
+  <FilesMatch "\.(ico|jpe?g|png|gif|swf|svg|woff2)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
   <filesMatch "\.(ico|jpe?g|png|gif|swf|svg)$">
     Header set Cache-Control "public"
   </filesMatch>
