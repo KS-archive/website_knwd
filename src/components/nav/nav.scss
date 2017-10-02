@@ -47,7 +47,7 @@ $mobileNavHeight: 80px;
 
 .nav__list-element {
 	margin-top: 8px;
-	margin-right: 60px;
+	margin-right: 40px;
 	font-size: 18px;
 	text-align: center;
 	text-transform: uppercase;
@@ -73,8 +73,13 @@ $mobileNavHeight: 80px;
 	@media (max-width: 1240px) {
 		margin-right: 30px;
 	}
-	@media (max-width: 1070px) {
-		font-size: 16px;
+	@media (max-width: 1160px) {
+		margin-right: 22px;
+		font-size: 15px;
+	}
+
+	&.green {
+		color: $color3 !important;
 	}
 }
 

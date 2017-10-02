@@ -4,5 +4,5 @@ const contact = document.querySelector('#kontakt');
 const aboutButton = document.querySelector('.hero__button.white');
 const about = document.querySelector('#kim_jesteśmy');
 
-joinButton.addEventListener('click', () => { scroll.animateScroll(contact, null, { offset: 200 }); })
+joinButton.addEventListener('click', () => { location.href = 'https://goo.gl/forms/shDFNjqOSskfYn2O2'; })
 aboutButton.addEventListener('click', () => { scroll.animateScroll(about, null, { offset: 200 }); })
